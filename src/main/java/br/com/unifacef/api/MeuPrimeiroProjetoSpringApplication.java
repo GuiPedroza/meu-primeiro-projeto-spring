@@ -12,9 +12,10 @@ public class MeuPrimeiroProjetoSpringApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MeuPrimeiroProjetoSpringApplication.class, args);
-		System.out.println("Esta é uma alteração de projeto");
+		System.out.println("Esta é uma alteração no projeto.");
+		System.out.println("Foi adicionada uma nova linha no application.properties");
 	}
-
+	
 	@Bean
 	public CommandLineRunner commandLineRunner() {
 		return args -> {
@@ -22,7 +23,8 @@ public class MeuPrimeiroProjetoSpringApplication {
 			System.out.println("Senha encoded: " + senhaEncoded);
 			senhaEncoded = SenhaUtils.gerarBCrypt("123456");
 			System.out.println("Senha encoded novamente:" + senhaEncoded);
-			System.out.println("Senha v�lida: " + SenhaUtils.senhaValida("123456", senhaEncoded));
+			System.out.println("Senha válida: " + SenhaUtils.senhaValida("123456", senhaEncoded));
 		};
 	}
+
 }

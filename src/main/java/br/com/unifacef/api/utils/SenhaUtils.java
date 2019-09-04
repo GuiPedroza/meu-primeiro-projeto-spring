@@ -19,7 +19,7 @@ public class SenhaUtils {
 	}
 
 	/**
-	 * Verifica se a senha é válida.
+	 * Verifica se a senha Ã© vÃ¡lida.
 	 *
 	 * @param senha
 	 * @param senhaEncoded

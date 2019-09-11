@@ -1,4 +1,4 @@
-package br.com.mrl.api.entities;
+package br.com.unifacef.api.entities;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

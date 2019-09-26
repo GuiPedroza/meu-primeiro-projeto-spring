@@ -3,7 +3,6 @@ package br.com.unifacef.api.utils;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class SenhaUtils {
-
 	/**
 	 * Gera um hash utilizando o BCrypt.
 	 *
@@ -27,7 +26,8 @@ public class SenhaUtils {
 	 */
 	public static boolean senhaValida(String senha, String senhaEncoded) {
 		BCryptPasswordEncoder bCryptEncoder = new BCryptPasswordEncoder();
+		
 		return bCryptEncoder.matches(senha, senhaEncoded);
 	}
-	
+
 }

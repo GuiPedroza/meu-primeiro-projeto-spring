@@ -25,23 +25,21 @@ import br.com.unifacef.api.enums.PerfilEnum;
 @Table(name = "funcionario")
 public class Funcionario implements Serializable {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -3740006722888499350L;
+	private static final long serialVersionUID = 3960290773081482021L;
+
 	private Long id;
 	private String nome;
 	private String email;
 	private String senha;
 	private String cpf;
-	private BigDecimal valorHora;
+	private Double valorHora;
 	private Float qtdHorasTrabalhoDia;
 	private Float qtdHorasAlmoco;
 	private PerfilEnum perfil;
 	private Date dataCriacao;
 	private Date dataAtualizacao;
-	private Empresa empresa;
-	private List<Lancamento> lancamentos;
+//	private Empresa empresa;
+//	private List<Lancamento> lancamentos;
 
 	public Funcionario() {
 	}
@@ -84,11 +82,11 @@ public class Funcionario implements Serializable {
 	}
 
 	@Column(name = "valor_hora", nullable = true)
-	public BigDecimal getValorHora() {
+	public Double getValorHora() {
 		return valorHora;
 	}
 
-	public void setValorHora(BigDecimal valorHora) {
+	public void setValorHora(Double valorHora) {
 		this.valorHora = valorHora;
 	}
 
@@ -147,23 +145,23 @@ public class Funcionario implements Serializable {
 		this.senha = senha;
 	}
 
-	@ManyToOne(fetch = FetchType.EAGER)
-	public Empresa getEmpresa() {
-		return empresa;
-	}
+//	@ManyToOne(fetch = FetchType.EAGER)
+//	public Empresa getEmpresa() {
+//		return empresa;
+//	}
 
-	public void setEmpresa(Empresa empresa) {
-		this.empresa = empresa;
-	}
+//	public void setEmpresa(Empresa empresa) {
+//		this.empresa = empresa;
+//	}
 
-	@OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	public List<Lancamento> getLancamentos() {
-		return lancamentos;
-	}
+//	@OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//	public List<Lancamento> getLancamentos() {
+//		return lancamentos;
+//	}
 
-	public void setLancamentos(List<Lancamento> lancamentos) {
-		this.lancamentos = lancamentos;
-	}
+//	public void setLancamentos(List<Lancamento> lancamentos) {
+//		this.lancamentos = lancamentos;
+//	}
 
 	@PreUpdate
 	public void preUpdate() {
@@ -178,12 +176,13 @@ public class Funcionario implements Serializable {
 	}
 
 	@Override
- public String toString() {
- return "Funcionario [id=" + id + ", nome=" + nome + ", email=" + email
-+ ", senha=" + senha + ", cpf=" + cpf
- + ", valorHora=" + valorHora + ", qtdHorasTrabalhoDia=" +
-qtdHorasTrabalhoDia + ", qtdHorasAlmoco="
- + qtdHorasAlmoco + ", perfil=" + perfil + ", dataCriacao="
- + dataCriacao + ", dataAtualizacao=" + dataAtualizacao + ",empresa=" + empresa + "]";
- }
+	public String toString() {
+	return "Funcionario [id=" + id + ", nome=" + nome + ", email=" + email
+	+ ", senha=" + senha + ", cpf=" + cpf
+	+ ", valorHora=" + valorHora + ", qtdHorasTrabalhoDia=" +
+	qtdHorasTrabalhoDia + ", qtdHorasAlmoco="
+	+ qtdHorasAlmoco + ", perfil=" + perfil + ", dataCriacao="
+	+ dataCriacao + ", dataAtualizacao=" + dataAtualizacao + ",	empresa=" + "]";
+	}
+
 }
